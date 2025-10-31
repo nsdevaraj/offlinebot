@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class=''>
+
+<head>
+  <script src='/static/js/console_runner.js'></script>
+  <script src='/static/js/events_runner.js'></script>
+  <script src='/static/js/css_live_reload_init.js'></script>
+  <meta charset='UTF-8'>
+  <meta name="robots" content="noindex">
+  <link href='/static/fonts/source-sans-pro.css' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='/static/css/reset.min.css'>
+  <link rel='stylesheet' href='/static/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='/static/css/chat.css'>
+</head>
+
+<body> 
+
+  <div id="frame"> 
+    <div class="content"> 
+      <div class="messages">
+        <ul>
+          <li class="sent">
+            <img src="https://avatars3.githubusercontent.com/u/30492527?s=460&v=4" alt="" />
+            <p>Hello am you.. Please write ur message to continue the chat.</p>
+
+          </li>
+          <li class="replies">
+            <img src="https://miro.medium.com/max/327/1*paQ7E6f2VyTKXHpR-aViFg.png" alt="" />
+            <p>Hello! I am the AIML bot!</p>
+          </li>
+        </ul>
+      </div>
+      <div class="message-input">
+        <div class="wrap">
+          <div id="userInput">
+            <input id="textInput" type="text" name="msg" placeholder="Write your message..." />
+            <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
+            <button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='/static/js/stopExecutionOnTimeout.js'></script>
+  <script src='/static/js/jquery.min.js'></script>
+  <script src='/static/js/chat.js'></script>
+</body>
+
+</html>
