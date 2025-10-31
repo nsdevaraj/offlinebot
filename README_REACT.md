@@ -84,6 +84,19 @@ curl -X POST http://localhost:8001/api/chat \
 }
 ```
 
+```bash
+# install dependencies
+cd backend
+python3 -m venv path/to/venv
+source path/to/venv/bin/activate
+pip install -r  requirements.txt
+python server.py
+
+cd frontend
+yarn install
+yarn start
+```
+
 ## 🚀 Running the Application
 
 ### Using Supervisor (Recommended)
@@ -103,14 +116,14 @@ sudo supervisorctl restart all
 
 **Backend:**
 ```bash
-cd /app/backend
+cd backend
 python server.py
 # Runs on http://0.0.0.0:8001
 ```
 
 **Frontend:**
 ```bash
-cd /app/frontend
+cd frontend
 yarn start
 # Runs on http://localhost:3000
 ```
