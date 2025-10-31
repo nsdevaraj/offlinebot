@@ -9,3 +9,4 @@
 path/to/venv
 frontend/node_modules
 backend/__pycache__
+frontend/build
