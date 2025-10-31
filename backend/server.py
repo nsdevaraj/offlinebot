@@ -5,6 +5,11 @@ import os
 import aiml
 from autocorrect import spell
 import uvicorn
+import time
+
+# Fix for Python 3.8+ compatibility with AIML library
+if not hasattr(time, 'clock'):
+    time.clock = time.perf_counter
 
 app = FastAPI()
 
