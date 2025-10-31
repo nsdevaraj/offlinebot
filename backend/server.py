@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import os
 import aiml
-from autocorrect import spell
+from autocorrect import Speller
 import uvicorn
 import time
 
@@ -57,7 +57,8 @@ async def health_check():
 async def chat(chat_message: ChatMessage):
     try:
         # Autocorrect the message
-        query = [spell(w) for w in chat_message.message.split()]
+        speller = Speller(lang='en')
+        query = [speller(w) for w in chat_message.message.split()]
         question = " ".join(query)
         
         # Get bot response
