@@ -8,7 +8,7 @@ function App() {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hello! I'm your AIML chatbot assistant. How can I help you today?",
+      text: "Hello! I'm your chatbot assistant. How can I help you today?",
       sender: 'bot',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
@@ -94,7 +94,7 @@ function App() {
               </svg>
             </div>
             <div>
-              <h1 className="text-xl font-bold" data-testid="chat-header-title">AIML Chatbot</h1>
+              <h1 className="text-xl font-bold" data-testid="chat-header-title">Chatbot</h1>
               <p className="text-sm text-blue-100">Always here to help</p>
             </div>
           </div>
