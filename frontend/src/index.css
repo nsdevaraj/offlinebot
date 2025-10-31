@@ -10,7 +10,12 @@
 
 @layer components {
   .message-bubble {
-    @apply rounded-2xl px-4 py-2 max-w-[70%] break-words shadow-sm;
+    @apply rounded-2xl px-4 py-2 max-w-[70%] shadow-sm;
+    word-break: normal;
+    overflow-wrap: break-word;
+    white-space: normal;
+    display: inline-block;
+    min-width: fit-content;
   }
   
   .user-message {
