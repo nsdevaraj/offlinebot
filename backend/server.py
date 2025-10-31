@@ -23,7 +23,10 @@ app.add_middleware(
 )
 
 # Initialize AIML Kernel
-BRAIN_FILE = "./pretrained_model/aiml_pretrained_model.dump"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BRAIN_FILE = os.path.join(BASE_DIR, "pretrained_model", "aiml_pretrained_model.dump")
+LEARNING_FILE = os.path.join(BASE_DIR, "pretrained_model", "learningFileList.aiml")
+
 k = aiml.Kernel()
 
 if os.path.exists(BRAIN_FILE):
@@ -31,9 +34,14 @@ if os.path.exists(BRAIN_FILE):
     k.loadBrain(BRAIN_FILE)
 else:
     print("Parsing aiml files")
-    k.bootstrap(learnFiles="./pretrained_model/learningFileList.aiml", commands="load aiml")
+    k.bootstrap(learnFiles=LEARNING_FILE, commands="load aiml")
     print("Saving brain file: " + BRAIN_FILE)
-    k.saveBrain(BRAIN_FILE)
+    try:
+        k.saveBrain(BRAIN_FILE)
+        print("Brain file saved successfully!")
+    except Exception as e:
+        print(f"Warning: Could not save brain file: {e}")
+        print("Continuing without brain file (will parse AIML on each startup)")
 
 print("✅ AIML Chatbot ready!")
 
